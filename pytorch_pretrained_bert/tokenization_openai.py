@@ -223,7 +223,7 @@ class OpenAIGPTTokenizer(object):
             # Using BERT's BasicTokenizer
             text = self.nlp.tokenize(text)
             for token in text:
-		if token not in self.special_tokens:
+                if token not in self.special_tokens:
                     split_tokens.extend([t for t in self.bpe(token).split(' ')])
                 else:
                     split_tokens.append(token)
@@ -232,7 +232,7 @@ class OpenAIGPTTokenizer(object):
             text = self.nlp(text_standardize(self.fix_text(text)))
             for token in text:
                 #split_tokens.extend([t for t in self.bpe(token.text.lower()).split(' ')])
-		if token not in self.special_tokens:
+                if token not in self.special_tokens:
                     split_tokens.extend([t for t in self.bpe(token).split(' ')])
                 else:
                     split_tokens.append(token)
